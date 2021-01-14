@@ -1,0 +1,110 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+}
+html, body {
+	font-size: 16px;
+	word-spacing: 1px;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	margin:0;
+	padding:0;
+	/* line-height: 102.6%; */
+}
+
+/* Reset buttons */
+button {
+	border: none;
+	padding: 0;
+	margin: 0;
+	background: none;
+	outline: none;
+	cursor: pointer;
+
+    width: auto;
+    overflow: visible;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/* UTILITIES */
+.flex { display: flex; }
+.justify-start { justify-content: flex-start !important; }
+.justify-end { justify-content: flex-end !important; }
+.justify-center { justify-content: center !important; }
+.justify-around { justify-content: space-around !important; }
+.justify-between { justify-content: space-between !important; }
+.align-start { align-items: flex-start !important; }
+.align-end { align-items: flex-end !important; }
+.align-center { align-items: center !important; }
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.center-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.flex-wrap { flex-wrap: wrap !important; }
+.truncate {
+	/* Make sure to set a width for this element */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+    supported by Chrome and Opera */
+}
+.selectable {
+    -webkit-touch-callout: auto !important; /* iOS Safari */
+    -webkit-user-select: auto !important; /* Safari */
+    -khtml-user-select: auto !important; /* Konqueror HTML */
+    -moz-user-select: auto !important; /* Firefox */
+    -ms-user-select: auto !important; /* Internet Explorer/Edge */
+    user-select: auto !important; /* Non-prefixed version, currently
+    supported by Chrome and Opera */
+    cursor: text;
+}
+.ts-heavy { text-shadow: 1px 1px 4px black, -1px -1px 4px black; }
+.ts-heavy-2 { text-shadow: 1px 1px 4px black, -1px -1px 4px black, 1px 1px 4px black, -1px -1px 4px black; }
+.bg-image {
+	background-position: center !important; /* Center the image */
+	background-repeat: no-repeat !important; /* Do not repeat the image */
+	background-size: cover !important; /* Resize the background image to cover the entire container */
+}
+.clean-shadow {
+	/* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+.disabled {
+    opacity: 0.2;
+	pointer-events: none;
+}
+.hidden { display: none; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }

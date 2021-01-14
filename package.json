@@ -1,0 +1,17 @@
+{
+  "name": "glassmorphism-generator",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.14.0",
+    "vue-color": "^2.8.1",
+    "vue-slider-component": "^3.2.11"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,28 @@
+@import './general.css';
+
+body {
+	font-family: 'Inter', -apple-system, 'Nunito', BlinkMacSystemFont,
+		'Segoe UI', Roboto, sans-serif;
+	color: white;
+	background: white;
+	font-size: 16px;
+}
+
+*::-moz-selection {
+	background: rgba(255, 0, 255, 0.4);
+}
+*::selection {
+	background: rgba(255, 0, 255, 0.4);
+}
+
+.appear {
+	animation: 0.1s appear;
+}
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
