@@ -1,36 +1,42 @@
 <template>
 	<div class="editor gradient-bg-wiretap">
 		<style>
+        .glass-initial {
+            {{ initialCSS }}
+        }
         .glass {
             {{ css }}
         }
 		</style>
 
+        <ScatteredPreviewPanels />
 		<Preview />
 
-		<div class="panels">
-			<div class="panel glass">
+		<div class="panels glass-initial cssPanel" :class="{ wasCopied }">
+			<div class="panel">
 				<div class="editor-setting">
-                    <div class="header"><span>TRANSPARENCY</span></div>
+                    <div class="header noselect"><span>TRANSPARENCY</span></div>
                     <Slider @change="updateTransparency" :min="0" :max="MAX_TRANSPARENCY" :interval="INTERVAL_TRANSPARENCY" :initialValue="INITIAL_TRANSPARENCY" ref="transparencySlider" />
                 </div>
 				<div class="editor-setting">
-                    <div class="header"><span>BLUR</span></div>
+                    <div class="header noselect"><span>BLUR</span></div>
                     <Slider @change="updateBlur" :min="0" :max="MAX_BLUR" :interval="INTERVAL_BLUR" :initialValue="INITIAL_BLUR" />
                 </div>
 				<div class="editor-setting">
-                    <div class="header"><span>COLOR</span></div>
+                    <div class="header noselect"><span>COLOR</span></div>
                     <ColorPicker :rgba="color" @change="updateColor" />
                 </div>
 				<div class="editor-setting">
-                    <div class="header"><span>OUTLINE</span></div>
+                    <div class="header noselect"><span>OUTLINE</span></div>
                     <Slider @change="updateOutlineAlpha" :min="0" :max="MAX_TRANSPARENCY" :interval="INTERVAL_TRANSPARENCY" :initialValue="INITIAL_OUTLINE_ALPHA" />
                 </div>
+				<div class="editor-setting">
+                    <div class="header noselect">CSS</div>
+                    <pre>{{ css }}</pre>
+                    <textarea type="text" v-model="css" ref="input"></textarea>
+                    <button class="copy-button noselect" type="button" @click="copyCSS">Copy CSS to Clipboard</button>
+                </div>
 			</div>
-			<div class="panel glass">
-                <div class="header noselect">CSS</div>
-                <pre>{{ css }}</pre>
-            </div>
 		</div>
 	</div>
 </template>
@@ -58,17 +64,20 @@ export default {
             INTERVAL_BLUR,
             INITIAL_BLUR,
             INITIAL_OUTLINE_ALPHA,
+            initialCSS: '',
 
             color: {...INITIAL_COLOR},
             blur: INITIAL_BLUR,
             outlineAlpha: INITIAL_OUTLINE_ALPHA,
+
+            // Editor state
+            wasCopied: false,
         }
     },
     computed: {
         css(){
             const outlineCSS = this.outlineAlpha ? `\nborder: 1px solid rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.outlineAlpha});` : ''
-
-            return `/* Generated from https://website.com */\n\nbackground: rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.color.a});\nborder-radius: 16px;\nbox-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);\nbackdrop-filter: blur(${this.blur}px);\n-webkit-backdrop-filter: blur(${this.blur}px);${outlineCSS}`
+            return `/* From https://css.glass */\nbackground: rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.color.a});\nborder-radius: 16px;\nbox-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);\nbackdrop-filter: blur(${this.blur}px);\n-webkit-backdrop-filter: blur(${this.blur}px);${outlineCSS}`
         }
     },
     methods: {
@@ -90,7 +99,27 @@ export default {
         updateOutlineAlpha(val){
             this.outlineAlpha = val
         },
+        copyCSS(){
+            copy(this.$refs.input)
+            this.wasCopied = true
+            setTimeout(() => this.wasCopied = false, 1500)
+        }
+    },
+    mounted(){
+        this.initialCSS = this.css
     }
+}
+
+function copy(inputElement) {
+    /* Get the text field */
+    const copyText = inputElement
+
+    /* Select the text field */
+    copyText.select()
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy")
 }
 </script>
 
@@ -104,18 +133,24 @@ pre {
     max-width: 500px;
     margin: 0 auto;
     margin-top: 48px;
+    position: relative;
+    overflow: hidden;
 }
 .panel {
     margin-bottom: 18px;
 	padding: 14px 18px;
 	color: white;
+    /* color: #ff306a; */
 	font-size: 16px;
-	font-weight: 300;
+    font-weight: 300;
+    /* position: relative; */
+    overflow: hidden;
 }
 .editor {
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	position: relative;
+    padding-bottom: 24px;
 }
 .gradient-rainbow {
 	background: linear-gradient(
@@ -140,5 +175,55 @@ pre {
 		#e94057,
 		#8a2387
 	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.copy-button {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    margin-top: 24px;
+    cursor: pointer;
+    transition: background-color .15s ease;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+}
+.copy-button:hover {
+    background-color: rgba(255,255,255,0.4);
+}
+textarea {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    opacity: 0.01;
+    width: 0px;
+    height: 0px;
+    pointer-events: none;
+}
+.cssPanel:after {
+    opacity: 0;
+    transition: opacity .25s ease;
+    content: 'Copied to clipboard!';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    background:rgba(210, 78, 145, 0.8);
+    pointer-events: none;
+    z-index: 5;
+}
+.cssPanel.wasCopied:after {
+    opacity: 1;
+    pointer-events: all;
 }
 </style>
