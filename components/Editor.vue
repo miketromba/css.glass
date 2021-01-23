@@ -1,5 +1,5 @@
 <template>
-	<div class="editor gradient-bg-wiretap">
+	<div class="editor">
 		<style>
         .glass-initial {
             {{ initialCSS }}
@@ -14,6 +14,8 @@
 
 		<div class="panels glass-initial cssPanel" :class="{ wasCopied }">
 			<div class="panel">
+                <h1>Glassmorphism CSS Generator</h1>
+                <h2>Create a CSS Glass Effect</h2>
 				<div class="editor-setting">
                     <div class="header noselect"><span>TRANSPARENCY</span></div>
                     <Slider @change="updateTransparency" :min="0" :max="MAX_TRANSPARENCY" :interval="INTERVAL_TRANSPARENCY" :initialValue="INITIAL_TRANSPARENCY" ref="transparencySlider" />
@@ -124,6 +126,18 @@ function copy(inputElement) {
 </script>
 
 <style scoped>
+h1 {
+    font-size: 24px;
+    margin-top: 12px;
+    text-align: center;
+}
+h2 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 6px;
+    margin-bottom: 24px;
+    text-align: center;
+}
 pre {
     margin-top: 12px;
     cursor: text;
@@ -151,30 +165,6 @@ pre {
 	min-height: 100vh;
 	position: relative;
     padding-bottom: 24px;
-}
-.gradient-rainbow {
-	background: linear-gradient(
-			217deg,
-			rgba(255, 50, 50, 1),
-			rgba(255, 0, 0, 0) 70.71%
-		),
-		linear-gradient(127deg, rgba(50, 255, 50, 1), rgba(0, 255, 0, 0) 70.71%),
-		linear-gradient(336deg, rgba(50, 50, 255, 1), rgba(0, 0, 255, 0) 70.71%);
-}
-.gradient-bg-wiretap {
-	background: #8a2387; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		320deg,
-		#f27121,
-		#e94057,
-		#8a2387
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		320deg,
-		#f27121,
-		#e94057,
-		#8a2387
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .copy-button {
     width: 100%;

@@ -20,7 +20,7 @@ export default {
         randomCSS(){
             const width = random(MIN, MAX),
                 height = random(MIN, MAX),
-                top = random(0, window.innerHeight-height),
+                top = random(0, window.innerHeight-height+80),
                 left = random(0, window.innerWidth-width),
                 rotation = Math.random(),
                 opacity = ((width * height) / (MAX * MAX)) * MAX_OPACITY
