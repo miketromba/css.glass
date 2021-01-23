@@ -1,7 +1,7 @@
 
 
 # TODO
-SEO metas (config file + inner page.vue components)
 
 
 # DONE
+SEO metas (config file + inner page.vue components)

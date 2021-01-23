@@ -1,13 +1,6 @@
 <template>
 	<div class="editor">
-		<style>
-        .glass-initial {
-            {{ initialCSS }}
-        }
-        .glass {
-            {{ css }}
-        }
-		</style>
+        <span v-html="glassStyleTag"></span>
 
         <ScatteredPreviewPanels />
 		<Preview />
@@ -80,6 +73,17 @@ export default {
         css(){
             const outlineCSS = this.outlineAlpha ? `\nborder: 1px solid rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.outlineAlpha});` : ''
             return `/* From https://css.glass */\nbackground: rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.color.a});\nborder-radius: 16px;\nbox-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);\nbackdrop-filter: blur(${this.blur}px);\n-webkit-backdrop-filter: blur(${this.blur}px);${outlineCSS}`
+        },
+        glassStyleTag(){
+            return`
+            <style>
+                .glass-initial {
+                    ${this.initialCSS}
+                }
+                .glass {
+                    ${this.css}
+                }
+            </style>`.trim()
         }
     },
     methods: {
