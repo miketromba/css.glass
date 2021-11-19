@@ -1,0 +1,9 @@
+Glassmorphic CSS Generator
+
+Quickly design and generate glassmorphic-styled CSS rules.
+
+https://css.glass
+
+This app helps you quickly generate CSS styles for a glassmorphism-styled UI.
+
+Hey PH, I threw together a quick generator for creating Glassmorphic CSS styles - useful for adding glass-like panels to your frontend UIs.

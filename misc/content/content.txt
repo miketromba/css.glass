@@ -1,0 +1,76 @@
+==============================
+   Preview Hunt Launch Kit
+==============================
+
+This is your Preview Hunt Launch Kit.
+It contains all the information you need to launch your product. 
+
+
+======== Content ========
+
+This is all the content you entered:
+
+=== Title ===
+
+Glassmorphic CSS Generator
+
+
+=== Tagline ===
+
+Quickly design and generate glassmorphic-styled CSS rules.
+
+
+=== Website ===
+
+https://css.glass
+
+
+=== Description ===
+
+This app helps you quickly generate CSS styles for a glassmorphism-styled UI.
+
+
+
+=== First Comment ===
+
+Hey PH, I threw together a quick generator for creating Glassmorphic CSS styles - useful for adding glass-like panels to your frontend UIs.
+
+
+==============================
+            Assets
+==============================
+
+=== Thumbnail ===
+
+/thumbnail/thumbnail.gif
+
+
+=== Images ===
+
+
+- /images/1.png
+
+- /images/2.png
+
+- /images/3.png
+
+- /images/4.png
+
+- /images/5.png
+
+
+
+------------------------------------------------------------
+
+==============================
+Launch Checklist and Materials
+==============================
+
+Launch Checklist by Andrey Azimov:
+http://andreyazimov.com/ph
+
+Official Launch Guide by Product Hunt"
+https://blog.producthunt.com/how-to-launch-on-product-hunt-7c1843e06399?gi=f782de3c1b16
+
+Website Launch Checklist by Humaan
+https://humaan.com/checklist/
