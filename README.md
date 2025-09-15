@@ -1,12 +1,12 @@
 # glassmorphism-generator
 
-## 👉 _Introducing: [UXCanvas.ai](https://uxcanvas.ai)_ - The AI-powered UI/UX Design Agent.
+## 👉 _Introducing: [UXCanvas.ai](https://uxcanvas.ai?utm_source=cssglass)_ - The AI-powered UI/UX Design Agent.
 
 Just tell the agent your idea and watch as it brings it to life in real time. 
 
-Try it for free at [UXCanvas.ai](https://uxcanvas.ai) and let me know what you think!
+Try it for free at [UXCanvas.ai](https://uxcanvas.ai?utm_source=cssglass) and let me know what you think!
 
-<a href="https://uxcanvas.ai" target="_blank" rel="noopener">
+<a href="https://uxcanvas.ai?utm_source=cssglass" target="_blank" rel="noopener">
   <img width="885" height="662" alt="image" src="./assets/uxcanvas-ss.png" />
 </a>
 
