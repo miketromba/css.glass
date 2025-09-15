@@ -6,7 +6,9 @@ Just tell the agent your idea and watch as it brings it to life in real time.
 
 Try it for free at [UXCanvas.ai](https://uxcanvas.ai) and let me know what you think!
 
-<img width="885" height="662" alt="image" src="./assets/uxcanvas-ss.png" />
+<a href="https://uxcanvas.ai" target="_blank" rel="noopener">
+  <img width="885" height="662" alt="image" src="./assets/uxcanvas-ss.png" />
+</a>
 
 ---
 
