@@ -1,14 +1,8 @@
 # glassmorphism-generator
 
-## 👉 _Job hunting?_ I'm building [ApplyFox.ai](https://applyfox.ai) - a tool that helps you get hired faster with AI-powered job applications.
-
-Here's how it works:
-1. Upload your resume
-2. AI finds 100's of perfect jobs
-3. AI auto-applies to them for you
-4. Watch as the interviews roll in ✅
-
-Give it a try and let me know what you think!
+<p align="center">
+ <img src="./docs/img/glassmorphism.gif" alt="main gif">
+</p>
 
 ---
 
@@ -30,3 +24,9 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Screenshots
+
+<p align="center">
+ <img src="./docs/img/screenshot_home.png" alt="main screeenshot">
+</p>
