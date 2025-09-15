@@ -7,7 +7,8 @@
 
 		<div class="panels glass-initial cssPanel" :class="{ wasCopied }">
 			<div class="panel">
-				<ApplyFoxBanner />
+				<!-- <ApplyFoxBanner /> -->
+				<UXCanvasBanner />
 				<h1>Glassmorphism CSS Generator</h1>
 				<h2>Create a CSS Glass Effect</h2>
 				<div class="editor-setting">

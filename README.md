@@ -1,14 +1,12 @@
 # glassmorphism-generator
 
-## 👉 _Job hunting?_ I'm building [ApplyFox.ai](https://applyfox.ai) - a tool that helps you get hired faster with AI-powered job applications.
+## 👉 _Introducing: [UXCanvas.ai](https://uxcanvas.ai)_ - The AI-powered UI/UX Design Agent.
 
-Here's how it works:
-1. Upload your resume
-2. AI finds 100's of perfect jobs
-3. AI auto-applies to them for you
-4. Watch as the interviews roll in ✅
+Just tell the agent your idea and watch as it brings it to life in real time. 
 
-Give it a try and let me know what you think!
+Try it for free at [UXCanvas.ai](https://uxcanvas.ai) and let me know what you think!
+
+<img width="885" height="662" alt="image" src="./assets/uxcanvas-ss.png" />
 
 ---
 
